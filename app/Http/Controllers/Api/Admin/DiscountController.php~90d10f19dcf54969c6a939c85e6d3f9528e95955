@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Http\Controllers\Api\admin;
+
+use App\Category;
+use App\Helpers\Utils;
+use App\Http\Controllers\Api\Api;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\PromotionDiscountResource;
+use App\Http\Resources\PromotionVoucherResource;
+use App\Product;
+use App\PromotionDiscount;
+use App\PromotionVoucher;
+use App\PromotionVoucherProduct;
+use App\Voucher;
+use App\User;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
+
+class DiscountController extends Api
+{
+    /**
+     * @OA\Post(
+     * path="/api/discount/get",
+     * summary="Discount",
+     * description="get Discount",
+     * operationId="get Discount",
+     * tags={"Discount"},
+     * security={ {"bearer": {} }},
+     *     @OA\Parameter(
+     *          name="mmses",
+     *          required=false,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="string"
+     *          ),
+     *     ),
+     * @OA\Response(
+     *    response=200,
+     *    description="Successful Operation",
+     *      @OA\JsonContent(
+
+     *        )
+     *     )
+     * )
+     */
+    public function get_discount() {
+        $discount = PromotionDiscount::where('status', 'active')->orderBy('updated_at')->get();
+        $data = [
+            'discount' => PromotionDiscountResource::collection($discount)
+        ];
+
+        return $this->successResponse($data);
+    }
+}

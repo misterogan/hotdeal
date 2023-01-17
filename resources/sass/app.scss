@@ -1,0 +1,31 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+// header
+@import "../../resources/sass/_header";
+
+// style
+@import "../../resources/sass/_style";
+
+//footer
+@import "../../resources/sass/_footer";
+
+//media-query
+@import "../../resources/sass/_responsive";
+
+//skeleton-loading
+@import "../../resources/sass/_skeleton";
+
+//bootstrap-learn
+@import "../../resources/sass/_bootstrap";
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

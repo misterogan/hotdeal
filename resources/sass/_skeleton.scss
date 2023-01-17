@@ -1,0 +1,142 @@
+@keyframes placeHolderShimmer{
+  0%{
+    background-position: -468px 0
+  }
+  100%{
+    background-position: 468px 0
+  }
+}
+.bg-placeholder{
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 1000px 104px;
+  position: relative;
+  overflow: hidden;
+  min-height: 1rem;
+}
+.bg-placeholder-secondary{
+  background-color: #f9f9f9;
+}
+.hr-ph{
+  width: 100%;
+  border-radius: 0px;
+  min-height: 1px;
+}
+.login-text-ph{
+  border-radius: 0px;
+  min-height: 10px;
+}
+.login-field-ph{
+  width: 300px;
+  margin: auto;
+  border-radius: 30px;
+  height: 50px;
+}
+
+.login-icon-ph{
+  width: 30px;
+  margin-left: 17px;
+  border-radius: 20px;
+  height: 30px;
+  background-color: #e6e6e6;
+}
+
+.hide{
+  display: none;
+}
+
+.profile-ph-md{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.profile-ph-sm{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+@for $i from 1 through 1000 {
+  .ph-h#{$i}{
+    height:$i*1px;
+  }
+}
+.ph-row{
+  display:flex;
+  width:100%;
+}
+.ph-direction-column{
+  flex-direction: column;
+}
+.ph-container{
+  width:90%;
+  margin:auto;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.ph-box-shadow{
+  background-color: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 10%);
+}
+@for $i from 1 through 12{
+  .ph-col-#{$i} {
+    width: 8.333% * $i;
+  }
+}
+.ph-col-12{
+  &:last-child {
+    .bg-placeholder{
+      margin-right: 0!important;
+    }
+  }
+}
+.rounded{
+    border-radius:15px;
+}
+.rounded-md{
+    border-radius:10px;
+}
+.rounded-sm{
+    border-radius:5px;
+}
+.ph-desktop{
+    display: block;
+}
+.ph-mobile{
+    display:none;
+}
+@media screen and (max-width: 540px){
+    .ph-desktop{
+        display: none;
+    }
+    .ph-mobile{
+        display:block;
+    }
+}
+
+@for $i from 1 through 100 {
+  .p-#{$i}{
+    padding:$i*1px;
+  }
+  .pt-#{$i}{
+    padding-top:$i*1px;
+  }
+  .pb-#{$i}{
+    padding-bottom:$i*1px;
+  }
+  .pl-#{$i}{
+    padding-left:$i*1px;
+  }
+  .pr-#{$i}{
+    padding-right:$i*1px;
+  }
+}
